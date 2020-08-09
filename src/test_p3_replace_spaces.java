@@ -17,7 +17,7 @@ public class test_p3_replace_spaces {
 		char[] string_array = test_string.toCharArray();
 		String benchmark = "%20love%20gayle!";
 		boolean checker = p3_replace_spaces.gayle_implementation(string_array, string_array.length) == benchmark;
-		System.out.println(p3_replace_spaces.gayle_implementation(string_array, string_array.length));
+		System.out.println(p3_replace_spaces.gayle_implementation(string_array, string_array.length + 6));
 		return checker;
 	}
 	
@@ -25,7 +25,7 @@ public class test_p3_replace_spaces {
 		String test_string = "i love gayle! :)";
 		char[] string_array = test_string.toCharArray();
 		String benchmark = "i%20love%20gayle!20:)";
-		boolean checker = p3_replace_spaces.gayle_implementation(string_array, string_array.length) == benchmark;
+		boolean checker = p3_replace_spaces.gayle_implementation(string_array, string_array.length + 6) == benchmark;
 		return checker;
 	}
 	
