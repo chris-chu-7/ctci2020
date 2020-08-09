@@ -16,7 +16,7 @@ public class p2_is_permutation {
 	  
 	 BST can make this code O(N) space O(N log N) time BUT Arrays has O(N) space and O(2N) time > O(NlogN) 
 	 less efficient N/logN, which isn't a significant enough difference to warrent the implementation time.
-	 see: 
+	 see: https://imgur.com/a/D2M9l1S
 	 */
 	
 	public static boolean my_implementation(String str_1, String str_2) {
