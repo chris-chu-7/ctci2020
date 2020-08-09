@@ -63,7 +63,6 @@ public class p3_replace_spaces {
 		int number_of_spaces = count_of_char(str, 0, true_length, ' ');
 		int new_index = true_length - 1 + number_of_spaces * 2;
 		if(new_index + 1 < str.length) str[new_index + 1] = '\0';
-		new_index--;
 		for(int old_index = true_length - 1; old_index >= 0; old_index--) {
 			if(str[old_index] == ' ') {
 				str[new_index] = '0';
