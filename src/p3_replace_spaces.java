@@ -49,6 +49,42 @@ public class p3_replace_spaces {
 		return final_string_builder.toString();
 	}
 	
+	public static String my_implementation_backwards(char[] str, int str_size) {
+		int num_spaces = 0;
+		for(int character = 0; character < str_size; character++) {
+			if(str[character] == ' ') {
+				num_spaces++;
+			}
+		}
+		int new_array_length = str_size + 2 * num_spaces;
+		char[] new_array = new char[new_array_length];
+		int new_index = new_array_length - 1;
+		boolean extra_space_eliminated = false;
+		for(int old_index = str_size - 1; old_index >= 0; old_index--) {
+			if(!extra_space_eliminated && str[old_index] == ' ') {
+				new_array[new_index] = '\0';
+				new_index -= 3;
+				continue;
+			} else {
+				extra_space_eliminated = true;
+				if(str[old_index] == ' ') {
+					new_array[new_index] = '0';
+					new_array[new_index - 1] = '2';
+					new_array[new_index - 2] = '%';
+					new_index -= 3;
+				} else {
+					new_array[new_index] = str[old_index];
+					new_index--;
+				}
+			}
+		}
+		StringBuilder final_string_builder = new StringBuilder();
+		for(int character = 0; character < new_array.length; character++) {
+			final_string_builder.append(new_array[character]);
+		} 
+		return final_string_builder.toString();
+	}
+	
 	public static int count_of_char(char[] str, int start, int end, int target) {
 		int count = 0;
 		for(int index = start; index < end; index++) {
