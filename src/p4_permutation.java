@@ -1,4 +1,3 @@
-//main
 public class p4_permutation {
 	
 	
