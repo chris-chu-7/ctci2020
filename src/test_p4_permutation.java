@@ -15,15 +15,15 @@ public class test_p4_permutation {
 	}
 	
 	public static boolean test_isPermutationOfPalindrome2_failure() {
-		return false;
+		return p4_permutation.isPermutationOfPalindrome2("gameofthrones");
 	}
 	
 	public static boolean test_isPermutationOfPalindrome3_success() {
-		return p4_permutation.isPermutationOfPalindrome1("racecar");
+		return p4_permutation.isPermutationOfPalindrome3("racecar");
 	}
 	
 	public static boolean test_isPermutationOfPalindrome3_failure() {
-		return false;
+		return p4_permutation.isPermutationOfPalindrome3("gameofthrones");
 	}
 
 	public static void main(String[] args) {
