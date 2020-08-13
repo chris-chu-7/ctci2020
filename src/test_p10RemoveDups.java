@@ -12,7 +12,7 @@ public class test_p10RemoveDups {
 		int[] checkList = {1, 2, 3, 5};
 		LinkedList.Node iterator = list;
 		int index = 0;
-		while(iterator.next != null && index < checkList.length) {
+		while(index < checkList.length) {
 			if(iterator.data != checkList[index]) {
 				return false;
 			}
@@ -32,7 +32,7 @@ public class test_p10RemoveDups {
 		int[] checkList = {1, 2, 3, 1, 5};
 		LinkedList.Node iterator = list;
 		int index = 0;
-		while(iterator.next != null && index < checkList.length) {
+		while(index < checkList.length) {
 			if(iterator.data != checkList[index]) {
 				return false;
 			}
@@ -53,7 +53,7 @@ public class test_p10RemoveDups {
 		LinkedList.Node iterator = list;
 		int index = 0;
 		while(index < checkList.length) {
-			if(iterator.data != checkList[index]) {
+			if(iterator.data != checkList[index] || index < checkList.length) {
 				return false;
 			}
 			iterator = iterator.next;
@@ -73,7 +73,7 @@ public class test_p10RemoveDups {
 		int[] checkList = {1, 2, 3, 1, 5};
 		int index = 0;
 		while(index < checkList.length) {
-			if(iterator.data != checkList[index]) {
+			if(iterator.data != checkList[index] || index < checkList.length) {
 				return false;
 			}
 			iterator = iterator.next;
