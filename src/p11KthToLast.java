@@ -9,6 +9,7 @@ public class p11KthToLast {
 		int index = printKthToLast_1(head.next, k) + 1;
 		if(index == k) {
 			System.out.println(k + "th to last node is " + head.data);
+			return k;
 		}
 		return index;
 	}
