@@ -33,7 +33,7 @@ public class LinkedList {
 			return head;
 		}
 		
-		public void printNode(Node head) {
+		public static void printNode(Node head) {
 			Node n = head;
 			System.out.print(n.data + " -> ");
 			while(n.next != null) {

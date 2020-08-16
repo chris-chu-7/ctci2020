@@ -32,10 +32,9 @@ public class p13_partition {
 					afterEnd = node;
 				}
 			}
-			node = node.next;
+			node = next;
 		}
 		if(beforeStart == null) return afterStart;
-		if(afterStart == null) return beforeStart;
 		beforeEnd.next = afterStart;
 		return beforeStart;
 	}
