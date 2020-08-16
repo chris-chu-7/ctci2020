@@ -1,6 +1,7 @@
 
 public class test_p13_partition {
 	
+	
 	public static boolean test_partition_1_success(){
 		/*Tests to see if a particular pattern of nodes
 		 * are partitioned successfully.*/
@@ -80,4 +81,5 @@ public class test_p13_partition {
 		System.out.println("TEST RESULTS: " + numPassed + " TESTS PASSED, " + numFailed + " TESTS FAILED.");
 	}
 
+	
 }
