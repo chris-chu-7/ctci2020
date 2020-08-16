@@ -24,7 +24,7 @@ public class p14_Sum_Lists {
 	
 	public static LinkedList.Node padList(LinkedList.Node list, int padding){
 		/*
-		 * Function that  "Pads" Linked List with Zeroes if one list is longer than the other
+		 * Function that "Pads" Linked List with Zeroes if one list is longer than the other
 		 * Returns the New Linked List
 		 */
 		LinkedList.Node head = list;
