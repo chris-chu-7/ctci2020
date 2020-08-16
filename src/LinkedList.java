@@ -43,6 +43,17 @@ public class LinkedList {
 			System.out.println("end.");
 		}
 		
+		public static int length(Node head) {
+			int length = 0;
+			LinkedList.Node tracker = head;
+			length++;
+			while(tracker.next != null) {
+				tracker = tracker.next;
+				length++;
+			}
+			return length;
+		}
+		
 		
 	}
 	

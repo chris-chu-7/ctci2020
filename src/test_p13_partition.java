@@ -10,10 +10,8 @@ public class test_p13_partition {
 		node.appendToTail(2);
 		node.appendToTail(1);
 		node.appendToTail(3);
-		int partitioned = node.next.next.data;
 		node = p13_partition.partition_1(node, 3);
 		int[] test_node_array = {2, 1, 8, 6, 3};
-		LinkedList.Node test_node = node;
 		for(int i = 0; i < test_node_array.length; i++) {
 			if(node.data != test_node_array[i]) return false;
 			node = node.next;
@@ -37,10 +35,8 @@ public class test_p13_partition {
 		node.appendToTail(2);
 		node.appendToTail(1);
 		node.appendToTail(3);
-		int partitioned = node.next.next.data;
 		node = p13_partition.partition_2(node, 3);
 		int[] test_node_array = {1, 2, 8, 6, 3};
-		LinkedList.Node test_node = node;
 		for(int i = 0; i < test_node_array.length; i++) {
 			if(node.data != test_node_array[i]) return false;
 			node = node.next;
