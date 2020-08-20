@@ -69,8 +69,10 @@ public class p18FixedDivision {
 	
 	
 	class p18Solution2{
+		
 		private int[] values2;
 		private int[] sizes2;
+		
 		
 		private class StackInfo_2{
 			
@@ -113,6 +115,7 @@ public class p18FixedDivision {
 			}
 						
 		}
+		
 		
 		private StackInfo_2[] info2;
 		
