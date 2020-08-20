@@ -160,6 +160,7 @@ public class p20StackOfPlates {
 		
 		
 		public int leftShift(int index, boolean removeTop) {
+			/*removing an item from an index*/
 			/*remove the bottom of one stack and push it to the top of the other stack
 			 * keep recursively doing this until reaching the beginning of the stack.*/
 			Stack stack = stacks.get(index);
@@ -180,5 +181,6 @@ public class p20StackOfPlates {
 		
 		
 	}
+	
 	
 }
