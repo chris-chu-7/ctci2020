@@ -3,7 +3,7 @@ import java.util.EmptyStackException;
 public class Stack {
 	
 	
-	private static class StackNode<T> {
+	static class StackNode<T> {
 		/*Class that represents a Node in a Stack.*/
 		
 		
