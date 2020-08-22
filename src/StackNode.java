@@ -8,12 +8,15 @@ public class StackNode<T> {
 		private StackNode<T> next;
 		public int size = 0;
 		
-		public StackNode() {}
+		public StackNode() {
+			this.size = 0;
+		}
 		
 		public StackNode(T data) {
 			/*Stack Node that indicates where data is*/
 			this.data = data;
 			this.size = 1;
+			top = this;
 		}
 		
 		/*top of stack to pop*/
