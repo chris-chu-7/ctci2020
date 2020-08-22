@@ -8,6 +8,8 @@ public class StackNode<T> {
 		private StackNode<T> next;
 		public int size = 0;
 		
+		public StackNode() {}
+		
 		public StackNode(T data) {
 			/*Stack Node that indicates where data is*/
 			this.data = data;
