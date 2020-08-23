@@ -4,6 +4,8 @@ public class LinkedList {
 	
 	
 	public static class Node{
+		
+		
 		Node next = null;
 		int data;
 		
