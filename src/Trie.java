@@ -3,6 +3,7 @@ import java.util.Map;
 
 public class Trie {
 
+	
 	private class TrieNode {
 		Map<Character, TrieNode> children;
 		boolean endOfWord;
@@ -13,6 +14,7 @@ public class Trie {
 	}
 	
 	private final TrieNode root;
+	
 	public Trie() {
 		root = new TrieNode();
 	}
@@ -26,6 +28,7 @@ public class Trie {
 				node = new TrieNode();
 				current.children.put(ch, node);
 			}
+			current = node;
 		}
 		current.endOfWord = true;
 	}
@@ -85,5 +88,6 @@ public class Trie {
 	public void delete(String word) {
 		delete(root, word, 0);
 	}
+	
 	
 }
