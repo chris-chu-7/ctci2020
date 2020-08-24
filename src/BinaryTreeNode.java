@@ -11,35 +11,30 @@ public class BinaryTreeNode {
 		this.name = value;
 	}
 	
-	public BinaryTreeNode add(int name) {
-		if(this == null) return new BinaryTreeNode(name);
-		BinaryTreeNode pointer = this;
+	public BinaryTreeNode add(BinaryTreeNode node, int name) {
+		if(node == null) return new BinaryTreeNode(name);
+		BinaryTreeNode pointer = node;
 		while(true) {
-			if(name < this.name) {
+			if(name < pointer.name) {
 				if(pointer.left != null) {
-					System.out.println("Adding number to the left: " + name);
 					pointer = pointer.left;
 				}
 				else {
-					System.out.println("Adding number to the left: " + name);
 					pointer.left = new BinaryTreeNode(name);
 					break;
 				}
 			} 
 			else {
-				System.out.println(pointer.right);
 				if(pointer.right != null) {
-					System.out.println("Adding number to the right: " + name);
 					pointer = pointer.right;
 				}
 				else {
-					System.out.println("Adding number to the right: " + name);
 					pointer.right = new BinaryTreeNode(name);
 					break;
 				}
 			}
 		}
-		return left;
+		return pointer;
 	}
 	
 	public void visit(BinaryTreeNode node) {
@@ -72,18 +67,24 @@ public class BinaryTreeNode {
 	
 	public static void main(String[] args) {
 		BinaryTreeNode node = new BinaryTreeNode(8);
-		node.add(10);
-		node.add(4);
-		node.add(10);
-		node.add(20);
-		node.add(2);
-		node.add(6);
+		node.add(node, 4);
+		node.add(node, 10);
+		node.add(node, 20);
+		node.add(node, 2);
+		node.add(node, 6);
 		
-		System.out.println(node.left.name);
 		System.out.println("Traversing...");
+		System.out.println();
+		System.out.println();
+		System.out.println("In-order: ");
+		System.out.println();
 		node.inOrderTraversal(node);
 		System.out.println();
+		System.out.println("Pre-order: ");
+		System.out.println();
 		node.preOrderTraversal(node);
+		System.out.println();
+		System.out.println("Post-order: ");
 		System.out.println();
 		node.postOrderTraversal(node);
 		
