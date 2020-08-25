@@ -1,6 +1,11 @@
 
 public class p24Graph {
 	
+	//https://www.futhead.com/20/squads/522881/
+
+	//https://www.futhead.com/20/squads/522893/
+
+	//https://www.futhead.com/20/squads/522903/
 	
 	public static int MAX_VERTICES = 6;
 	private p24Node vertices[];
@@ -26,3 +31,5 @@ public class p24Graph {
 
 	
 }
+
+

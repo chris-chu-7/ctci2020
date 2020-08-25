@@ -33,6 +33,41 @@ public class p24Question {
 		return false;
 		
 	}
+	
+	public static p24Graph createNewGraph() {
+		p24Graph g = new p24Graph();
+		p24Node[] temp = new p24Node[6];
+		temp[0] = new p24Node("a", 3);
+		temp[1] = new p24Node("b", 0);
+		temp[2] = new p24Node("c", 0);
+		temp[3] = new p24Node("d", 1);
+		temp[4] = new p24Node("e", 1);
+		temp[5] = new p24Node("f", 0);
+		temp[0].addAdjacent(temp[1]);
+		temp[0].addAdjacent(temp[2]);
+		temp[0].addAdjacent(temp[3]);
+		temp[3].addAdjacent(temp[4]);
+		temp[4].addAdjacent(temp[5]);
+		for(int i = 0; i < temp.length; i++) {
+			g.addNode(temp[i]);
+		}
+		return g;				
+	}
+	
+	public static void main(String[] args) {
+		p24Graph g = createNewGraph();
+		p24Node[] n = g.getNodes();
+		p24Node start;
+		p24Node end;
+		for(int i = 0; i < 5; i++) {
+			for(int j = i + 1; j < 5; j++) {
+				start = n[i];
+				end = n[j];
+				System.out.println("Point from " + i + " to " + j + ": " + search(g, start, end));
+			}
+		}
+		
+	}
 
 	
 }
