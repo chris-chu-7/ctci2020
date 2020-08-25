@@ -5,43 +5,44 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+
+
 public class GraphSearch {
 
+	
+	public GraphSearch() {
+		
+	}
+	
+	
 	class Node {
 		
 		
 		String name;
 		List<Node> neighbors = new ArrayList<Node>();
 		
-		public Node(String name) {
+		private Node(String name) {
 			this.name = name;
 		}
 		
-		public String getName() {
+		private String getName() {
 			return this.name;
 		}
 		
-		public void addNeighbor(Node neighbor) {
+		private void addNeighbor(Node neighbor) {
 			neighbors.add(neighbor);
 		}
 		
-		public List<Node> getNeighbors(){
+		private List<Node> getNeighbors(){
 			return neighbors;
 		}
 		
-		public String toString() {
-			return this.name;
-		}
 		
 		
 	}
-	
 	
 	private static Map<String, Node> nodes = new HashMap<String, Node>();
-	public GraphSearch() {
-		
-	}
-	
+
 	public void addEdge(String nodeName1, String nodeName2) {
 		Node node1 = nodes.get(nodeName1);
 		if(node1 == null) {
@@ -96,7 +97,9 @@ public class GraphSearch {
 	    		DFS(nodes.get(i).getName());
 	        }
 	    }
-	        return result;
-	    } 
+	    return result;
+	 } 
+	
+	
 	
 }
