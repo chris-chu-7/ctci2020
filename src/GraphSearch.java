@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class GraphSearch {
 
-	
 	class Node {
 		
 		
@@ -38,7 +37,7 @@ public class GraphSearch {
 	}
 	
 	
-	private Map<String, Node> nodes = new HashMap<String, Node>();
+	private static Map<String, Node> nodes = new HashMap<String, Node>();
 	public GraphSearch() {
 		
 	}
@@ -82,6 +81,22 @@ public class GraphSearch {
 		}
 		return result;
 	}
-	
+
+	static Set<String> visited = new HashSet<String>();
+
+	public static List<Node> DFS(String rootName) {
+		List<Node> result = new ArrayList<Node>();
+	    List<Node> temp = new ArrayList<Node>();
+	    visited.add(rootName);
+	    Node root = nodes.get(rootName);
+	    result.add(root);
+	    List<Node> neighbors = root.getNeighbors();
+	    for(int i = 0; i < neighbors.size(); i++) {
+	    	if(!visited.contains(root.name)) {
+	    		DFS(nodes.get(i).getName());
+	        }
+	    }
+	        return result;
+	    } 
 	
 }
