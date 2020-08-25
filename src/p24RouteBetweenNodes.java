@@ -32,7 +32,6 @@ public class p24RouteBetweenNodes {
 			if(adjacencyList.containsKey(name)) return;
 			adjacencyList.put(name, new ArrayList<Node>());
 			ArrayList<Node> key = adjacencyList.get(parent);
-			Iterator it = adjacencyList.entrySet().iterator();
 			key.add(new Node(name));
 		}
 		public HashMap<String, ArrayList<Node>> getNodes(){
