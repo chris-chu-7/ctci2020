@@ -1,11 +1,13 @@
 import java.util.LinkedList;
 import java.util.ArrayList;
+
+
 public class p33BSTSequences {
 
 	
 	public void weaveLists(LinkedList<Integer> first, LinkedList<Integer> second,
 			ArrayList<LinkedList<Integer>> results, LinkedList<Integer> prefix) {
-		if(first.size() != 0 || second.size() != 0) {
+		if(first.size() == 0 || second.size() == 0) {
 			LinkedList<Integer> result = (LinkedList<Integer>) prefix.clone();
 			result.addAll(first);
 			result.addAll(second);
@@ -16,6 +18,7 @@ public class p33BSTSequences {
 		prefix.addLast(headFirst);
 		weaveLists(first, second, results, prefix);
 		prefix.removeLast();
+		first.addFirst(headFirst);
 		int headSecond = second.removeFirst();
 		prefix.addLast(headSecond);
 		weaveLists(first, second, results, prefix);
