@@ -52,7 +52,8 @@ def incrementToLevel(waterLevel, row, column, rocks):
     if(((row - 1) >= 0)):
         if ((waterLevel[row][column] - rocks[row - 1][column]) < 0):
             minDifference = min(minDifference, rocks[row - 1][column] - waterLevel[row][column])
-            satisfy = False
+        else:
+            return waterLevel
  
             
     print("first")
@@ -61,7 +62,8 @@ def incrementToLevel(waterLevel, row, column, rocks):
     if(((row + 1) < len(waterLevel))):
         if ((waterLevel[row][column] - rocks[row + 1][column]) < 0):
             minDifference = min(minDifference, rocks[row + 1][column] - waterLevel[row][column])
-            satisfy = False
+        else: 
+            return waterLevel
 
 
             
@@ -71,7 +73,8 @@ def incrementToLevel(waterLevel, row, column, rocks):
     if(((column - 1) >= 0)):
         if ((waterLevel[row][column] - rocks[row][column - 1]) < 0):
             minDifference = min(minDifference, rocks[row][column - 1] - waterLevel[row][column])
-            satisfy = False
+        else:
+            return waterLevel
 
 
             
@@ -81,16 +84,14 @@ def incrementToLevel(waterLevel, row, column, rocks):
     if(((column + 1) < len(waterLevel[0]))):
         if ((waterLevel[row][column] - rocks[row][column + 1]) < 0):
             minDifference = min(minDifference, rocks[row][column + 1] - waterLevel[row][column])
-            satisfy = False
+        else:
+            return waterLevel
 
 
             
     print("fourth")
 
         
-    if satisfy: 
-        print("conditions satisfied.")
-        return waterLevel
     
     for i in range(0, minDifference):
         waterLevel = incrementWaterHeight(waterLevel)
