@@ -48,6 +48,10 @@ def Colorland(numSquares, board):
     r = [0, 0]
     y = [0, 0]
     
+    if(numSquares < 0 or numSquares > len(board)):
+        raise Exception("Invalid number.")
+
+    
     for element in range(0, len(board)):
         color = boardArray[element]
         if(color == 0):
@@ -83,9 +87,3 @@ def Colorland(numSquares, board):
         else: 
             raise Exception("Must be a valid color")
     
-    
-    
-
-if __name__ == "__main__":
-    board = ["Blue", "Orange", "Pink", "Green", "Red", "Yellow", "Yellow", "Yellow", "Yellow"]
-    print(Colorland(len(board), board))
