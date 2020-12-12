@@ -120,6 +120,7 @@ def dfs(rocks, water, row, column, level, hours):
     #up
     if((row - 1) >= 0):
         if(rocks[row - 1][column] < rocks[row][column] or water[row - 1][column] < rocks[row][column]):
+            print("up")
             updfs = dfs(rocks, incrementWaterHeight(water), row - 1, column, level + 1, hours + 1)
             min_hours = min(min_hours, updfs)
         
@@ -127,6 +128,7 @@ def dfs(rocks, water, row, column, level, hours):
     #down
     if((row + 1) < len(rocks)):
         if(rocks[row + 1][column] < rocks[row][column] or water[row + 1][column] < rocks[row][column]):
+            print("down")
             downdfs = dfs(rocks, incrementWaterHeight(water), row + 1, column, level + 1, hours + 1)
             min_hours = min(min_hours, downdfs)
 
@@ -134,6 +136,7 @@ def dfs(rocks, water, row, column, level, hours):
     #left
     if((column - 1) >= 0):
         if(rocks[row][column - 1] < rocks[row][column] or water[row][column - 1] < rocks[row][column]):
+            print("left")
             leftdfs = dfs(rocks, incrementWaterHeight(water), row, column - 1, level + 1, hours + 1)
             min_hours = min(min_hours, leftdfs)
 
@@ -141,6 +144,7 @@ def dfs(rocks, water, row, column, level, hours):
     #right
     if((column + 1) < len(rocks[0])):
         if(rocks[row][column + 1] < rocks[row][column] or water[row][column + 1] < rocks[row][column]):
+            print("right")
             rightdfs = dfs(rocks, incrementWaterHeight(water), row, column + 1, level + 1, hours + 1)
             min_hours = min(min_hours, rightdfs)
             
