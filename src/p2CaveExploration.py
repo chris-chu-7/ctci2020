@@ -42,6 +42,64 @@ def incrementWaterHeight(waterLevel):
             waterLevel[i][j] += 1
     return waterLevel
 
+'''
+This function increments to the level that we can perform DFS.
+'''
+def incrementToLevel(waterLevel, row, column, rocks):
+    minDifference = sys.maxsize;
+    satisfy = True
+    print("starting to increment")
+    if(((row - 1) >= 0)):
+        if ((waterLevel[row][column] - rocks[row - 1][column]) < 0):
+            minDifference = min(minDifference, rocks[row - 1][column] - waterLevel[row][column])
+            satisfy = False
+ 
+            
+    print("first")
+        
+    
+    if(((row + 1) < len(waterLevel))):
+        if ((waterLevel[row][column] - rocks[row + 1][column]) < 0):
+            minDifference = min(minDifference, rocks[row + 1][column] - waterLevel[row][column])
+            satisfy = False
+
+
+            
+    print("second")
+
+        
+    if(((column - 1) >= 0)):
+        if ((waterLevel[row][column] - rocks[row][column - 1]) < 0):
+            minDifference = min(minDifference, rocks[row][column - 1] - waterLevel[row][column])
+            satisfy = False
+
+
+            
+    print("third")
+
+        
+    if(((column + 1) < len(waterLevel[0]))):
+        if ((waterLevel[row][column] - rocks[row][column + 1]) < 0):
+            minDifference = min(minDifference, rocks[row][column + 1] - waterLevel[row][column])
+            satisfy = False
+
+
+            
+    print("fourth")
+
+        
+    if satisfy: 
+        print("conditions satisfied.")
+        return waterLevel
+    
+    for i in range(0, minDifference):
+        waterLevel = incrementWaterHeight(waterLevel)
+    
+    print("new level: " + str(waterLevel))
+    print("difference: " + str(minDifference))
+    
+    return waterLevel
+
 
 '''
 This function performs dfs to have the goldfish traverse through this path.
@@ -50,6 +108,8 @@ The change is that the water level increases with the number of hours.
 def dfs(rocks, water, row, column, level, hours):
     
     min_hours = sys.maxsize 
+    
+    water = incrementToLevel(water, row, column, rocks)
 
     #base case
     if(row == len(rocks) and column == len(rocks[0])):
