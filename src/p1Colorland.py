@@ -87,3 +87,9 @@ def Colorland(numSquares, board):
         else: 
             raise Exception("Must be a valid color")
     
+    
+    
+
+if __name__ == "__main__":
+    board = ["Blue", "Orange", "Pink", "Green", "Red", "Yellow", "Yellow", "Yellow", "Yellow"]
+    print(Colorland(len(board), board))
